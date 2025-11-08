@@ -1,3 +1,5 @@
+$Host.UI.RawUI.WindowTitle = "File Integrity Verifier"
+
 function Get-FilePath {
     Add-Type -AssemblyName System.Windows.Forms
     $dialog = New-Object System.Windows.Forms.OpenFileDialog
@@ -67,9 +69,9 @@ function Wait-ForFileDownload {
 
 # ====== MAIN SCRIPT ======
 
-Write-Host "===============================" -ForegroundColor Cyan
-Write-Host "       File Integrity Verifier" -ForegroundColor Cyan
-Write-Host "===============================" -ForegroundColor Cyan
+
+Write-Host "File Integrity Verifier" -ForegroundColor Cyan
+Write-Host "Please use the Explorer window to select the file you want to verify the hash for."
 Write-Host ""
 
 # Step 1: Select file
@@ -109,7 +111,7 @@ Write-Host ""
 Write-Host "==================== RESULTS ====================" -ForegroundColor Cyan
 Write-Host ("Expected Hash : " + $expectedHash.ToLower()) -ForegroundColor White
 Write-Host ("Computed Hash : " + $fileHash) -ForegroundColor White
-Write-Host "=================================================" -ForegroundColor Cyan
+Write-Host ""
 
 # Step 7: Compare
 if ($fileHash -eq $expectedHash.ToLower()) {
