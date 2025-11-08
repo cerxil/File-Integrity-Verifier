@@ -1,23 +1,26 @@
-# File-Integrity-Verifier
-Checks the integrity of your downloaded files with ease
+# File Integrity Verifier
 
-Supports
+Easily check the integrity of your downloaded files.
+
+Supports the following hash algorithms:
+
 * MD5
 * SHA1
 * SHA256
 * SHA512
 
-![hash_check_success](https://raw.githubusercontent.com/cerxil/File-Integrity-Verifier/refs/heads/main/hash_check_success.png)
+![hash\_check\_success](https://raw.githubusercontent.com/cerxil/File-Integrity-Verifier/refs/heads/main/hash_check_success.png)
+
+---
 
 ## How It Works
 
-* Select your download from explorer UI
+1. Select your downloaded file using the Explorer UI.
+2. Paste the file hash from the download page into the terminal.
+3. The script automatically detects the hash type and checks if the file is still downloading (detecting `.part`, `.crdownload`, or `.tmp` files).
+4. View a clear result indicating whether your download is valid or corrupted.
 
-* Paste file hash from the download page to the terminal
-
-* Automatically checks what hash to use and if file is still downloading `.part`, `.crdownload`, `.tmp`
-
-* Shows you if good or bad download 
+---
 
 ## How to Run
 
@@ -25,35 +28,43 @@ You have two options:
 
 ### 1. Download and Run Manually (Offline)
 
-* Download `File-Integrity-Verifier.ps1` from this repository.
-* Right-click the file and select **Run with PowerShell** (or run it in PowerShell manually).
+1. Download `File-Integrity-Verifier.ps1` from this repository.
+2. Right-click the file and select **Run with PowerShell**, or run it manually from PowerShell.
 
 ### 2. One-Time Execution via PowerShell
 
-You can run the script directly from GitHub using this command in PowerShell:
+Run the script directly from GitHub:
 
 ```powershell
 irm https://raw.githubusercontent.com/cerxil/File-Integrity-Verifier/refs/heads/main/File-Integrity-Verifier.ps1 | iex
 ```
 
-Note: You may need to allow script execution by running:
+> Note: You may need to allow script execution:
+
 ```powershell
 Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
 ```
 
+---
+
 ## Troubleshooting
 
-If you encounter errors:
-
 * Ensure PowerShell is run with sufficient permissions (try **Run as Administrator**).
-* Try running the script again
-
-## More screenshots
-
-![file_selection_dialog](https://raw.githubusercontent.com/cerxil/File-Integrity-Verifier/refs/heads/main/file_selection_dialog.png)
-![download_in_progress](https://raw.githubusercontent.com/cerxil/File-Integrity-Verifier/refs/heads/main/download_in_progress.png)
-![hash_check_failure](https://raw.githubusercontent.com/cerxil/File-Integrity-Verifier/refs/heads/main/hash_check_failure.png)
+* Retry the script if errors occur.
 
 ---
 
-Feel free to open an issue if something doesn't work as expected.
+## Screenshots
+
+File selection dialog:
+![file\_selection\_dialog](https://raw.githubusercontent.com/cerxil/File-Integrity-Verifier/refs/heads/main/file_selection_dialog.png)
+
+Download in progress detection:
+![download\_in\_progress](https://raw.githubusercontent.com/cerxil/File-Integrity-Verifier/refs/heads/main/download_in_progress.png)
+
+Hash check failure:
+![hash\_check\_failure](https://raw.githubusercontent.com/cerxil/File-Integrity-Verifier/refs/heads/main/hash_check_failure.png)
+
+---
+
+If something doesn’t work as expected, feel free to [open an issue](https://github.com/cerxil/File-Integrity-Verifier/issues).
